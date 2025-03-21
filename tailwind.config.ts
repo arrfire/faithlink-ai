@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,7 +62,13 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+				// Bible verse theme colors
+				scripture: {
+					light: '#F8F7F4',
+					accent: '#C9AB72',
+					deep: '#1A365D',
+				},
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -84,12 +91,48 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'fade-in': {
+					'0%': { opacity: '0' },
+					'100%': { opacity: '1' }
+				},
+				'fade-up': {
+					'0%': { opacity: '0', transform: 'translateY(10px)' },
+					'100%': { opacity: '1', transform: 'translateY(0)' }
+				},
+				'gentle-pulse': {
+					'0%, 100%': { opacity: '1' },
+					'50%': { opacity: '0.8' }
+				},
+				'float': {
+					'0%, 100%': { transform: 'translateY(0)' },
+					'50%': { transform: 'translateY(-5px)' }
+				},
+				'shimmer': {
+					'0%': { backgroundPosition: '-500px 0' },
+					'100%': { backgroundPosition: '500px 0' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
-			}
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'fade-in': 'fade-in 0.6s ease-out',
+				'fade-up': 'fade-up 0.8s ease-out',
+				'gentle-pulse': 'gentle-pulse 3s infinite ease-in-out',
+				'float': 'float 6s infinite ease-in-out',
+				'shimmer': 'shimmer 2s infinite linear'
+			},
+			fontFamily: {
+				sans: ['Inter var', 'Inter', 'sans-serif'],
+				serif: ['EB Garamond', 'serif'],
+			},
+			backdropBlur: {
+				xs: '2px',
+			},
+			boxShadow: {
+				'soft': '0 4px 20px -2px rgba(0, 0, 0, 0.06)',
+				'inner-soft': 'inset 0 2px 4px 0 rgba(0, 0, 0, 0.05)',
+			},
 		}
 	},
 	plugins: [require("tailwindcss-animate")],
